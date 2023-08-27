@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" style="-fx-background-color: #FFFACD;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.controllers.LoginController">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <GridPane style="-fx-background-color: #efda65;">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="LOGIN" textFill="GOLDENROD">
+               <font>
+                  <Font name="Microsoft Sans Serif" size="24.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="100.0" />
+               </GridPane.margin>
+            </Label>
+         </children>
+         <GridPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </GridPane.margin>
+      </GridPane>
+      <ButtonBar prefHeight="40.0" prefWidth="200.0" GridPane.rowIndex="3">
+        <buttons>
+          <Button fx:id="loginBtn" alignment="CENTER" mnemonicParsing="false" onAction="#otvaranjeHomePage" style="-fx-pref-height: 40; -fx-pref-width: 120; -fx-background-color: #FFFACD; -fx-border-color: #daa520; -fx-border-width: 3;" text="LOGIN" textFill="GOLDENROD" textOverrun="WORD_ELLIPSIS">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <font>
+                  <Font name="Microsoft Sans Serif" size="18.0" />
+               </font>
+            </Button>
+        </buttons>
+         <GridPane.margin>
+            <Insets bottom="50.0" right="90.0" />
+         </GridPane.margin>
+      </ButtonBar>
+      <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+         <children>
+            <Label text="E-mail:" textFill="GOLDENROD">
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" right="20.0" top="3.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="emailFld" prefHeight="20.0" prefWidth="180.0">
+               <HBox.margin>
+                  <Insets left="10.0" right="5.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+         <GridPane.margin>
+            <Insets top="50.0" />
+         </GridPane.margin>
+      </HBox>
+      <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+         <children>
+            <Label text="Password:" textFill="GOLDENROD">
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="20.0" right="5.0" top="3.0" />
+               </HBox.margin>
+            </Label>
+            <PasswordField fx:id="passwordFld" prefHeight="20.0" prefWidth="180.0">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+            </PasswordField>
+         </children>
+         <GridPane.margin>
+            <Insets top="30.0" />
+         </GridPane.margin>
+      </HBox>
+   </children>
+</GridPane>
