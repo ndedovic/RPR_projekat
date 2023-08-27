@@ -1,4 +1,6 @@
 package ba.unsa.etf.rpr.dao;
 
-public interface KategorijaDao {
+import ba.unsa.etf.rpr.domain.Kategorija;
+
+public interface KategorijaDao extends Dao<Kategorija> {
 }
