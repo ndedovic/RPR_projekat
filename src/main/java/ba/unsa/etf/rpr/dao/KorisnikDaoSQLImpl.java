@@ -4,6 +4,7 @@ import ba.unsa.etf.rpr.domain.Korisnik;
 import ba.unsa.etf.rpr.exceptions.PekaraException;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Map;
 
 public class KorisnikDaoSQLImpl extends AbstractDao<Korisnik> implements KorisnikDao{
@@ -25,7 +26,17 @@ public class KorisnikDaoSQLImpl extends AbstractDao<Korisnik> implements Korisni
 
     @Override
     public Korisnik row2object(ResultSet rs) throws PekaraException {
-        return null;
+        try{
+            Korisnik korisnik = new Korisnik();
+            korisnik.setId(rs.getInt("idKorisnik"));
+            korisnik.setIme(rs.getString("Ime"));
+            korisnik.setPrezime(rs.getString("Prezime"));
+            korisnik.setEmail(rs.getString("Email"));
+            korisnik.setPassword(rs.getString("Password"));
+            return korisnik;
+        } catch (SQLException e) {
+            throw new PekaraException(e.getMessage(), e);
+        }
     }
 
     @Override
