@@ -23,7 +23,15 @@ public class NarudzbaDaoSQLImpl extends AbstractDao<Narudzba> implements Narudzb
     }
     @Override
     public Narudzba row2object(ResultSet rs) throws PekaraException {
-        return null;
+        try{
+            Narudzba narudzba = new Narudzba();
+            narudzba.setId(rs.getInt("idNarudzba"));
+            narudzba.setCijena(rs.getString("cijena"));
+            narudzba.setKorisnik(rs.getInt("idKorisnik"));
+            return narudzba;
+        } catch (SQLException e) {
+            throw new PekaraException(e.getMessage(), e);
+        }
     }
 
     @Override
