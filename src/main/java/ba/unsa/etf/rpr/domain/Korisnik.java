@@ -1,5 +1,7 @@
 package ba.unsa.etf.rpr.domain;
 
+import java.util.Objects;
+
 /**
  * Klasa za korisnike
  * @author Nejra
@@ -111,5 +113,38 @@ public class Korisnik implements Idable{
      */
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    /**
+     * Ispis korisnika
+     * @return
+     */
+    @Override
+    public String toString() {
+        return "Korisnik{" +
+                "id=" + id +
+                ", ime='" + ime + '\'' +
+                ", prezime='" + prezime + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
+
+    /**
+     * Poređenje dva korisnika
+     * @param o
+     * @return
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Korisnik korisnik = (Korisnik) o;
+        return id == korisnik.id && ime.equals(korisnik.ime) && prezime.equals(korisnik.prezime) && email.equals(korisnik.email) && password.equals(korisnik.password);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, ime, prezime, email, password);
     }
 }
