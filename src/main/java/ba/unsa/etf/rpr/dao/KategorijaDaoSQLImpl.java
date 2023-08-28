@@ -6,6 +6,7 @@ import ba.unsa.etf.rpr.exceptions.PekaraException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class KategorijaDaoSQLImpl extends AbstractDao<Kategorija> implements KategorijaDao {
 
@@ -38,6 +39,9 @@ public class KategorijaDaoSQLImpl extends AbstractDao<Kategorija> implements Kat
 
     @Override
     public Map<String, Object> object2row(Kategorija object) {
-        return null;
+        Map<String, Object> row = new TreeMap<>();
+        row.put("idKategorija", object.getId());
+        row.put("naziv", object.getNaziv());
+        return row;
     }
 }
