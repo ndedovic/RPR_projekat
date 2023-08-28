@@ -23,7 +23,16 @@ public class ProizvodiDaoSQLImpl extends AbstractDao<Proizvodi> implements Proiz
     }
     @Override
     public Proizvodi row2object(ResultSet rs) throws PekaraException {
-        return null;
+        try{
+            Proizvodi proizvodi = new Proizvodi();
+            proizvodi.setId(rs.getInt("idProizvodi"));
+            proizvodi.setCijena(rs.getString("cijena"));
+            proizvodi.setKategorija(rs.getInt("idKategorija"));
+            proizvodi.setNaziv(rs.getString("naziv"));
+            return proizvodi;
+        } catch (SQLException e) {
+            throw new PekaraException(e.getMessage(),e);
+        }
     }
 
     @Override
