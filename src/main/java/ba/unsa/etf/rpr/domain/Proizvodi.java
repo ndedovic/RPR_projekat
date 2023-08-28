@@ -1,5 +1,7 @@
 package ba.unsa.etf.rpr.domain;
 
+import java.util.Objects;
+
 /**
  * Klasa za proizvode
  * @author Nejra
@@ -77,5 +79,37 @@ public class Proizvodi implements Idable{
 
     public void setKategorija(Kategorija kategorija) {
         this.kategorija = kategorija;
+    }
+
+    /**
+     * Ispis određenog proizvoda
+     * @return
+     */
+    @Override
+    public String toString() {
+        return "Proizvodi{" +
+                "id=" + id +
+                ", naziv='" + naziv + '\'' +
+                ", cijena='" + cijena + '\'' +
+                ", kategorija=" + kategorija +
+                '}';
+    }
+
+    /**
+     * Poređenje dva proizvoda
+     * @param o
+     * @return
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Proizvodi proizvodi = (Proizvodi) o;
+        return id == proizvodi.id && Objects.equals(naziv, proizvodi.naziv) && Objects.equals(cijena, proizvodi.cijena) && Objects.equals(kategorija, proizvodi.kategorija);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, naziv, cijena, kategorija);
     }
 }
