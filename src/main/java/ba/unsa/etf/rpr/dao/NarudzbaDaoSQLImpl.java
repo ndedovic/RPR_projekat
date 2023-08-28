@@ -4,6 +4,7 @@ import ba.unsa.etf.rpr.domain.Narudzba;
 import ba.unsa.etf.rpr.exceptions.PekaraException;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Map;
 
 public class NarudzbaDaoSQLImpl extends AbstractDao<Narudzba> implements NarudzbaDao {
