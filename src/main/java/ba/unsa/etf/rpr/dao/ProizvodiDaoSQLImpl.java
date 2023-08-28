@@ -6,6 +6,8 @@ import ba.unsa.etf.rpr.exceptions.PekaraException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Map;
+import java.util.Objects;
+import java.util.TreeMap;
 
 public class ProizvodiDaoSQLImpl extends AbstractDao<Proizvodi> implements ProizvodiDao {
     private static ProizvodiDaoSQLImpl instance = null;
@@ -37,6 +39,11 @@ public class ProizvodiDaoSQLImpl extends AbstractDao<Proizvodi> implements Proiz
 
     @Override
     public Map<String, Object> object2row(Proizvodi object) {
-        return null;
+        Map<String, Object> row = new TreeMap<>();
+        row.put("idProizvodi", object.getId());
+        row.put("idKategorija", object.getKategorija());
+        row.put("naziv", object.getNaziv());
+        row.put("cijena", object.getCijena());
+        return row;
     }
 }
