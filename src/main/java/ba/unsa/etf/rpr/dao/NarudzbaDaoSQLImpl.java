@@ -5,7 +5,9 @@ import ba.unsa.etf.rpr.exceptions.PekaraException;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class NarudzbaDaoSQLImpl extends AbstractDao<Narudzba> implements NarudzbaDao {
     private static NarudzbaDaoSQLImpl instance = null;
@@ -36,6 +38,10 @@ public class NarudzbaDaoSQLImpl extends AbstractDao<Narudzba> implements Narudzb
 
     @Override
     public Map<String, Object> object2row(Narudzba object) {
-        return null;
+        Map<String, Object> row = new TreeMap<>();
+        row.put("idNarudzba", object.getId());
+        row.put("cijena", object.getCijena());
+        row.put("idKorisnik", object.getKorisnik());
+        return row;
     }
 }
