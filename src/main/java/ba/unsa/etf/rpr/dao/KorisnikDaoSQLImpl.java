@@ -6,6 +6,7 @@ import ba.unsa.etf.rpr.exceptions.PekaraException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class KorisnikDaoSQLImpl extends AbstractDao<Korisnik> implements KorisnikDao{
     private static  KorisnikDaoSQLImpl instance = null;
@@ -41,6 +42,12 @@ public class KorisnikDaoSQLImpl extends AbstractDao<Korisnik> implements Korisni
 
     @Override
     public Map<String, Object> object2row(Korisnik object) {
-        return null;
+        Map<String, Object> row = new TreeMap<>();
+        row.put("idKorisnik", object.getId());
+        row.put("Ime", object.getIme());
+        row.put("Prezime", object.getPrezime());
+        row.put("Email", object.getEmail());
+        row.put("Password", object.getPassword());
+        return row;
     }
 }
