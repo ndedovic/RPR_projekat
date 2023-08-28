@@ -1,5 +1,7 @@
 package ba.unsa.etf.rpr.domain;
 
+import java.util.Objects;
+
 /**
  * Klasa za narudzbe
  * @author Nejra
@@ -62,5 +64,36 @@ public class Narudzba implements Idable{
 
     public void setCijena(String cijena) {
         this.cijena = cijena;
+    }
+
+    /**
+     * Ispis narudzbe
+     * @return id naruzbe. korisnika koji je narucio i cijenu narudzbe
+     */
+    @Override
+    public String toString() {
+        return "Narudzba{" +
+                "id=" + id +
+                ", korisnik=" + korisnik +
+                ", cijena='" + cijena + '\'' +
+                '}';
+    }
+
+    /**
+     * Porede se dvije narudzbe
+     * @param o
+     * @return
+     */
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Narudzba narudzba = (Narudzba) o;
+        return id == narudzba.id && korisnik.equals(narudzba.korisnik) && Objects.equals(cijena, narudzba.cijena);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, korisnik, cijena);
     }
 }
