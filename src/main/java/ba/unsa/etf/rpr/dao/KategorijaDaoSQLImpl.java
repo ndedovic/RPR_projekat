@@ -4,6 +4,7 @@ import ba.unsa.etf.rpr.domain.Kategorija;
 import ba.unsa.etf.rpr.exceptions.PekaraException;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Map;
 
 public class KategorijaDaoSQLImpl extends AbstractDao<Kategorija> implements KategorijaDao {
@@ -25,7 +26,14 @@ public class KategorijaDaoSQLImpl extends AbstractDao<Kategorija> implements Kat
     }
     @Override
     public Kategorija row2object(ResultSet rs) throws PekaraException {
-        return null;
+        try {
+            Kategorija cat = new Kategorija();
+            cat.setId(rs.getInt("idKategorija"));
+            cat.setNaziv(rs.getString("naziv"));
+            return cat;
+        } catch (SQLException e) {
+            throw new PekaraException(e.getMessage(), e);
+        }
     }
 
     @Override
