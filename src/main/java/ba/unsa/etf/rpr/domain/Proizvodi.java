@@ -11,7 +11,7 @@ public class Proizvodi implements Idable{
     private int id;
     private String naziv;
     private String cijena;
-    private Kategorija kategorija;
+    private int kategorija;
 
     /**
      * Konstruktor sa svim parametrima
@@ -20,7 +20,7 @@ public class Proizvodi implements Idable{
      * @param cijena
      * @param kategorija
      */
-    public Proizvodi(int id, String naziv, String cijena, Kategorija kategorija) {
+    public Proizvodi(int id, String naziv, String cijena, int kategorija) {
         this.id = id;
         this.naziv = naziv;
         this.cijena = cijena;
@@ -73,11 +73,11 @@ public class Proizvodi implements Idable{
      * Getter i setter za kategoriju
      * @return
      */
-    public Kategorija getKategorija() {
+    public int getKategorija() {
         return kategorija;
     }
 
-    public void setKategorija(Kategorija kategorija) {
+    public void setKategorija(int kategorija) {
         this.kategorija = kategorija;
     }
 
@@ -105,7 +105,7 @@ public class Proizvodi implements Idable{
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Proizvodi proizvodi = (Proizvodi) o;
-        return id == proizvodi.id && Objects.equals(naziv, proizvodi.naziv) && Objects.equals(cijena, proizvodi.cijena) && Objects.equals(kategorija, proizvodi.kategorija);
+        return id == proizvodi.id && Objects.equals(naziv, proizvodi.naziv) && Objects.equals(cijena, proizvodi.cijena) && kategorija == proizvodi.kategorija;
     }
 
     @Override

@@ -4,6 +4,7 @@ import ba.unsa.etf.rpr.domain.Proizvodi;
 import ba.unsa.etf.rpr.exceptions.PekaraException;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Map;
 
 public class ProizvodiDaoSQLImpl extends AbstractDao<Proizvodi> implements ProizvodiDao {
