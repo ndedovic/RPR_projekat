@@ -5,6 +5,7 @@ import ba.unsa.etf.rpr.exceptions.PekaraException;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -49,5 +50,9 @@ public class KorisnikDaoSQLImpl extends AbstractDao<Korisnik> implements Korisni
         row.put("Email", object.getEmail());
         row.put("Password", object.getPassword());
         return row;
+    }
+    @Override
+    public List<Korisnik> pronadjiKorisnikaPoID(int id) throws PekaraException{
+        return executeQuery("SELECT * from Korisnik WHERE id = ?", new Object[]{id});
     }
 }
