@@ -55,7 +55,7 @@ public class ProizvodiDaoSQLImpl extends AbstractDao<Proizvodi> implements Proiz
      */
     @Override
     public List<Proizvodi> pronadjiProizvodePoID(int id) throws PekaraException{
-        return executeQuery("SELECT * from Proizvodi WHERE id = ?", new Object[]{id});
+        return executeQuery("SELECT * from Proizvodi WHERE idProizvodi = ?", new Object[]{id});
     }
     @Override
     public List<Proizvodi> pronadjiProizvodPoKategoriji(int id) throws PekaraException{

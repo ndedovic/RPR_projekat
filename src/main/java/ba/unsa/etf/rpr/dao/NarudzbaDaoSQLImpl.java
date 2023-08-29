@@ -53,6 +53,6 @@ public class NarudzbaDaoSQLImpl extends AbstractDao<Narudzba> implements Narudzb
      */
     @Override
     public List<Narudzba> pronadjiNarudzbuPoID(int id) throws PekaraException{
-        return executeQuery("SELECT * from Narudzba WHERE id = ?", new Object[]{id});
+        return executeQuery("SELECT * from Narudzba WHERE idNarudzba = ?", new Object[]{id});
     }
 }

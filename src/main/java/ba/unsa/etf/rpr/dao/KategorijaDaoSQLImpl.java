@@ -54,6 +54,6 @@ public class KategorijaDaoSQLImpl extends AbstractDao<Kategorija> implements Kat
      */
     @Override
     public List<Kategorija> pronadjiKategorijuPoID(int id) throws PekaraException{
-        return executeQuery("SELECT * from Kategorija WHERE id = ?", new Object[]{id});
+        return executeQuery("SELECT * from Kategorija WHERE idKategorija = ?", new Object[]{id});
     }
 }
