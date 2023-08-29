@@ -5,8 +5,8 @@ import ba.unsa.etf.rpr.exceptions.PekaraException;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 import java.util.TreeMap;
 
 public class ProizvodiDaoSQLImpl extends AbstractDao<Proizvodi> implements ProizvodiDao {
@@ -45,5 +45,9 @@ public class ProizvodiDaoSQLImpl extends AbstractDao<Proizvodi> implements Proiz
         row.put("naziv", object.getNaziv());
         row.put("cijena", object.getCijena());
         return row;
+    }
+    @Override
+    public List<Proizvodi> pronadjiProizvodePoID(int id) throws PekaraException{
+        return executeQuery("SELECT * from Proizvodi WHERE id = ?", new Object[]{id});
     }
 }
