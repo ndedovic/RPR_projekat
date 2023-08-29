@@ -5,7 +5,7 @@ import ba.unsa.etf.rpr.exceptions.PekaraException;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -43,5 +43,9 @@ public class NarudzbaDaoSQLImpl extends AbstractDao<Narudzba> implements Narudzb
         row.put("cijena", object.getCijena());
         row.put("idKorisnik", object.getKorisnik());
         return row;
+    }
+    @Override
+    public List<Narudzba> pronadjiNarudzbuPoID(int id) throws PekaraException{
+        return executeQuery("SELECT * from Narudzba WHERE id = ?", new Object[]{id});
     }
 }
