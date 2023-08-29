@@ -19,5 +19,6 @@ ba\unsa\etf\rpr\dao\AbstractDao$1.class
 ba\unsa\etf\rpr\AppFX.class
 ba\unsa\etf\rpr\dao\KategorijaDaoSQLImpl.class
 ba\unsa\etf\rpr\dao\KategorijaDao.class
+ba\unsa\etf\rpr\controllers\OnamaController.class
 ba\unsa\etf\rpr\dao\KorisnikDao.class
 ba\unsa\etf\rpr\dao\AbstractDao.class

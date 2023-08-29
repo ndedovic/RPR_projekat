@@ -23,7 +23,19 @@ public class PocetnaController {
     public Button registrationBtn;
 
     public void prikazOnama(ActionEvent actionEvent) {
-
+        try {
+            Stage stage1 = (Stage)aboutBtn.getScene().getWindow();
+            stage1.close();
+            Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/onama.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("O nama");
+            Scene scene = new Scene(newRoot, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE);
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public void prikazPomoci(ActionEvent actionEvent) {
@@ -47,7 +59,7 @@ public class PocetnaController {
 
     public void prikazRegistracije(ActionEvent actionEvent) {
         try {
-            Stage stage1 = (Stage)loginBtn.getScene().getWindow();
+            Stage stage1 = (Stage)registrationBtn.getScene().getWindow();
             stage1.close();
             Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/registracija.fxml"));
             Stage stage = new Stage();
