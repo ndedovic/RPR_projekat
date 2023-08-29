@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface KorisnikDao extends Dao<Korisnik> {
     List<Korisnik> pronadjiKorisnikaPoID(int id) throws PekaraException;
+
+    List<Korisnik> pronadjiKorisnikaPoEmailu(String email) throws PekaraException;
 }

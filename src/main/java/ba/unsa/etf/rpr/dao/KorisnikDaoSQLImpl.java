@@ -62,4 +62,8 @@ public class KorisnikDaoSQLImpl extends AbstractDao<Korisnik> implements Korisni
     public List<Korisnik> pronadjiKorisnikaPoID(int id) throws PekaraException{
         return executeQuery("SELECT * from Korisnik WHERE idKorisnik = ?", new Object[]{id});
     }
+    @Override
+    public List<Korisnik> pronadjiKorisnikaPoEmailu(String email) throws PekaraException{
+        return executeQuery("SELECT * FROM Korisnik WHERE Email = ?", new Object[]{email});
+    }
 }
