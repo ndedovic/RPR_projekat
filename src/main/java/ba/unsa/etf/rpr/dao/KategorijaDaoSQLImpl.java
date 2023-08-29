@@ -46,6 +46,12 @@ public class KategorijaDaoSQLImpl extends AbstractDao<Kategorija> implements Kat
         return row;
     }
 
+    /**
+     * Metoda za pronalazak kategorije na osnovu id-a
+     * @param id
+     * @return
+     * @throws PekaraException
+     */
     @Override
     public List<Kategorija> pronadjiKategorijuPoID(int id) throws PekaraException{
         return executeQuery("SELECT * from Kategorija WHERE id = ?", new Object[]{id});

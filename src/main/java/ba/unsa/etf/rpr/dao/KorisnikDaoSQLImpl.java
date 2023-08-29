@@ -51,6 +51,13 @@ public class KorisnikDaoSQLImpl extends AbstractDao<Korisnik> implements Korisni
         row.put("Password", object.getPassword());
         return row;
     }
+
+    /**
+     * Metoda za pronalazak određenog korisnika koji odgovara proslijeđenom id-u
+     * @param id
+     * @return
+     * @throws PekaraException
+     */
     @Override
     public List<Korisnik> pronadjiKorisnikaPoID(int id) throws PekaraException{
         return executeQuery("SELECT * from Korisnik WHERE id = ?", new Object[]{id});

@@ -46,6 +46,13 @@ public class ProizvodiDaoSQLImpl extends AbstractDao<Proizvodi> implements Proiz
         row.put("cijena", object.getCijena());
         return row;
     }
+
+    /**
+     * Metoda za pronalazak proizvoda koji odgovara proslijeđenom id-u
+     * @param id
+     * @return List<Proizvod>
+     * @throws PekaraException
+     */
     @Override
     public List<Proizvodi> pronadjiProizvodePoID(int id) throws PekaraException{
         return executeQuery("SELECT * from Proizvodi WHERE id = ?", new Object[]{id});

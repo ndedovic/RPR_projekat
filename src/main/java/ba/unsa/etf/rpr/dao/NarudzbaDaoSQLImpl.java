@@ -44,6 +44,13 @@ public class NarudzbaDaoSQLImpl extends AbstractDao<Narudzba> implements Narudzb
         row.put("idKorisnik", object.getKorisnik());
         return row;
     }
+
+    /**
+     * Metoda za pronalazak narudzbe koja odgovara id-u
+     * @param id
+     * @return List<Narudzba>
+     * @throws PekaraException
+     */
     @Override
     public List<Narudzba> pronadjiNarudzbuPoID(int id) throws PekaraException{
         return executeQuery("SELECT * from Narudzba WHERE id = ?", new Object[]{id});
