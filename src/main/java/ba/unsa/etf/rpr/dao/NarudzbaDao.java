@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface NarudzbaDao extends Dao<Narudzba> {
     List<Narudzba> pronadjiNarudzbuPoID(int id) throws PekaraException;
+
+    List<Narudzba> pronadjiNarudzbuPoKorisniku(int id) throws PekaraException;
 }
