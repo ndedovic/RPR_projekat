@@ -46,7 +46,7 @@
                   <Font name="Microsoft Sans Serif" size="36.0" />
                </font>
                <GridPane.margin>
-                  <Insets left="70.0" top="7.0" />
+                  <Insets left="90.0" top="7.0" />
                </GridPane.margin>
             </Label>
             <Label text="Zlatni">
@@ -54,7 +54,7 @@
                   <Font name="Monotype Corsiva" size="48.0" />
                </font>
                <GridPane.margin>
-                  <Insets left="190.0" />
+                  <Insets left="210.0" />
                </GridPane.margin>
             </Label>
          </children>
