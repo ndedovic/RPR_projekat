@@ -55,6 +55,13 @@ public class NarudzbaDaoSQLImpl extends AbstractDao<Narudzba> implements Narudzb
     public List<Narudzba> pronadjiNarudzbuPoID(int id) throws PekaraException{
         return executeQuery("SELECT * from Narudzba WHERE idNarudzba = ?", new Object[]{id});
     }
+
+    /**
+     * Metoda za pronalazak narudzbi koje su vezane za određenog korisnika čiji je id proslijeđen kao parametar
+     * @param id
+     * @return
+     * @throws PekaraException
+     */
     @Override
     public List<Narudzba> pronadjiNarudzbuPoKorisniku(int id) throws PekaraException{
         return executeQuery("SELECT * from Narudzba WHERE idKorisnik = ?", new Object[]{id});

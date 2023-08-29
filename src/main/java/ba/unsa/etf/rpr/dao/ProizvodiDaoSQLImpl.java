@@ -57,6 +57,13 @@ public class ProizvodiDaoSQLImpl extends AbstractDao<Proizvodi> implements Proiz
     public List<Proizvodi> pronadjiProizvodePoID(int id) throws PekaraException{
         return executeQuery("SELECT * from Proizvodi WHERE idProizvodi = ?", new Object[]{id});
     }
+
+    /**
+     * Metoda za pronalazak proizvoda koji pripadaju određenoj kategoriji
+     * @param id
+     * @return
+     * @throws PekaraException
+     */
     @Override
     public List<Proizvodi> pronadjiProizvodPoKategoriji(int id) throws PekaraException{
         return executeQuery("SELECT * from Proizvodi WHERE idKategorija = ?", new Object[]{id});
