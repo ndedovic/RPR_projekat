@@ -5,6 +5,7 @@ import ba.unsa.etf.rpr.exceptions.PekaraException;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -43,5 +44,10 @@ public class KategorijaDaoSQLImpl extends AbstractDao<Kategorija> implements Kat
         row.put("idKategorija", object.getId());
         row.put("naziv", object.getNaziv());
         return row;
+    }
+
+    @Override
+    public List<Kategorija> pronadjiKategorijuPoID(int id) throws PekaraException{
+        return executeQuery("SELECT * from Kategorija WHERE id = ?", new Object[]{id});
     }
 }
