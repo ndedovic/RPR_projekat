@@ -23,6 +23,7 @@ public class PocetnaController {
     public Button registrationBtn;
 
     public void prikazOnama(ActionEvent actionEvent) {
+
     }
 
     public void prikazPomoci(ActionEvent actionEvent) {
