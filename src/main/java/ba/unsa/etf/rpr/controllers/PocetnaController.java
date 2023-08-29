@@ -24,8 +24,6 @@ public class PocetnaController {
 
     public void prikazOnama(ActionEvent actionEvent) {
         try {
-            Stage stage1 = (Stage)aboutBtn.getScene().getWindow();
-            stage1.close();
             Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/onama.fxml"));
             Stage stage = new Stage();
             stage.setTitle("O nama");
