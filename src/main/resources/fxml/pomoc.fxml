@@ -86,7 +86,7 @@
             <Font name="Times New Roman" size="14.0" />
          </font>
       </Label>
-      <Button fx:id="zatvoriBtn" mnemonicParsing="false" onAction="#zatvaranjeOnama" text="Zatvori" GridPane.rowIndex="1">
+      <Button fx:id="zatvoriBtn" mnemonicParsing="false" onAction="#zatvaranjeOnama" style="-fx-background-color: rgb(255,255,255); -fx-border-color: rgb(218,165,32); -fx-border-width: 2;" text="Zatvori" GridPane.rowIndex="1">
          <font>
             <Font name="Times New Roman" size="14.0" />
          </font>
