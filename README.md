@@ -37,3 +37,12 @@ Korpa nam omogućava prikaz prozora za korpu.
 ![Alt Text](./src/main/resources/images/prikazProizvoda.PNG)
 
 Ukoliko kliknemo na Slano dobijamo sljedeči prikaz proizvoda.
+
+### Korpa
+![Alt Text](./src/main/resources/images/Korpa.PNG)
+
+Možemo potvrditi ili otkazati narudžbu. ukoliko je potvrdimo dobijamo sljedeći prozor.
+
+![Alt Text](./src/main/resources/images/potvrda.PNG)
+
+Nadamo se da Vam se svidjela naša aplikacija.
