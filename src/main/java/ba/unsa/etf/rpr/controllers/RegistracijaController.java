@@ -85,7 +85,7 @@ public class RegistracijaController {
                 }
             }
         });
-        emailCheck.textProperty().addListener(new ChangeListener<String>() {
+        emailFld.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String o, String n) {
                 if ( n.length() < 8  || !n.toString().matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$")) {
@@ -136,7 +136,6 @@ public class RegistracijaController {
                 System.out.println(string1 + " " + string2 + " " + string3);
 
                 korisnikManager.dodajKorisnika(korisnik);
-
                 try {
                     Stage stage1 = (Stage) registracijaBtn.getScene().getWindow();
                     stage1.close();
