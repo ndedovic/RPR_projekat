@@ -63,4 +63,13 @@ public class AppTest
             assertEquals("Ime mora sadržavati samo slova, i dužina imena ne smije biti manja ili jednaka 2", e.getMessage());
         }
     }
+    @Test
+    public void Test7(){
+        KorisnikManager manager = new KorisnikManager();
+        try{
+            manager.validacijaPrezimenaKupca("123");
+        } catch (PekaraException e) {
+            assertEquals("Prezime mora sadržavati samo slova, i dužina prezimena ne smije biti manja ili jednaka 2", e.getMessage());
+        }
+    }
 }
