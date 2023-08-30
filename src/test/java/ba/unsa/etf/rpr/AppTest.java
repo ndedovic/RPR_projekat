@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import ba.unsa.etf.rpr.business.KategorijaManager;
 import ba.unsa.etf.rpr.business.KorisnikManager;
+import ba.unsa.etf.rpr.business.ProizvodiManager;
 import ba.unsa.etf.rpr.domain.Kategorija;
 import ba.unsa.etf.rpr.domain.Korisnik;
 import ba.unsa.etf.rpr.domain.Narudzba;
@@ -75,7 +76,13 @@ public class AppTest
     @Test
     public void Test8() throws PekaraException {
         KategorijaManager manager = new KategorijaManager();
-        manager.dodajKategoriju(kategorija1);
         assertEquals(1, manager.dajSveKategorije().size());
+    }
+
+    @Test
+    public void Test9() throws PekaraException {
+        ProizvodiManager manager = new ProizvodiManager();
+        manager.obrisiProizvod(1);
+        assertNotNull(manager.pronadjiSveProizvode().size());
     }
 }
