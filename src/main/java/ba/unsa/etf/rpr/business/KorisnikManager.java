@@ -13,7 +13,7 @@ public class KorisnikManager {
     public void obrisiKorisnika(int id) throws PekaraException {
         DaoFactory.korisnikDao().delete(id);
     }
-    public void dodajKorisnika(Korisnik korisnik) throws PekaraException {
+    public static void dodajKorisnika(Korisnik korisnik) throws PekaraException {
         DaoFactory.korisnikDao().add(korisnik);
     }
     public Korisnik pronadjiKorisnikaPoID(int id) throws PekaraException {

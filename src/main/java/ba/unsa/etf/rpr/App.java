@@ -1,5 +1,6 @@
 package ba.unsa.etf.rpr;
 
+import ba.unsa.etf.rpr.business.KorisnikManager;
 import ba.unsa.etf.rpr.dao.DaoFactory;
 import ba.unsa.etf.rpr.domain.Korisnik;
 import ba.unsa.etf.rpr.exceptions.PekaraException;
@@ -33,6 +34,33 @@ public class App
             }
             if (pomocna == 0){
                 System.out.println("\nNeuspješna prijava!");
+            }
+        }else if(broj == 2){
+            System.out.println("Registracija\n");
+            System.out.println("Unesite vaše ime\n");
+            String ime;
+            Scanner scanner = new Scanner(System.in);
+            ime = scanner.next();
+            System.out.println("\nUnesite vaše prezime\n");
+            String prezime;
+            prezime = scanner.next();
+            System.out.println("\nUnesite vaš e-mail\n");
+            String email;
+            email = scanner.next();
+            System.out.println("\nUnesite vaš password\n");
+            String password;
+            password = scanner.next();
+
+            if(ime != null && prezime != null && email != null && password != null){
+                Korisnik korisnik = new Korisnik();
+                korisnik.setPrezime(prezime);
+                korisnik.setIme(ime);
+                korisnik.setEmail(email);
+                korisnik.setPassword(password);
+                KorisnikManager.dodajKorisnika(korisnik);
+                System.out.println("\nUspješno ste se registrovali");
+            }else{
+                System.out.println("\nRegistracija nije bila uspješna!");
             }
         }
     }
