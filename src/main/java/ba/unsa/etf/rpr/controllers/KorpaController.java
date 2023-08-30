@@ -1,5 +1,10 @@
 package ba.unsa.etf.rpr.controllers;
 
+import ba.unsa.etf.rpr.business.ModelManager;
+import ba.unsa.etf.rpr.business.NarudzbaManager;
+import ba.unsa.etf.rpr.domain.Narudzba;
+import ba.unsa.etf.rpr.domain.Proizvodi;
+import ba.unsa.etf.rpr.exceptions.PekaraException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +22,9 @@ public class KorpaController {
     public Button potvrdiID;
     public Button otkaziID;
 
+    NarudzbaManager manager = new NarudzbaManager();
+    public static Proizvodi proizvodUKorpi = new Proizvodi();
+
     @FXML
     void initialize(){
         if(ProdavnicaController.selektovaniProizvod != null){
@@ -24,9 +32,17 @@ public class KorpaController {
             cijenaLbl.setText((ProdavnicaController.selektovaniProizvod.getCijena()));
         }
     }
-
+    public void zabiljeziNarudzbu() throws PekaraException {
+        ModelManager model = ModelManager.getInstance();
+        Narudzba narudzba = new Narudzba();
+        narudzba.setKorisnik(model.getKorisnik().getId());
+        narudzba.setCijena(model.getProizvod().getCijena());
+        System.out.println(narudzba.getKorisnik());
+        manager.dodajNarudbu(narudzba);
+    }
     public void potvrdiNarudzbu(ActionEvent actionEvent) {
         try {
+            zabiljeziNarudzbu();
             Stage stage1 = (Stage) potvrdiID.getScene().getWindow();
             stage1.close();
             Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/potvrdaNarudzbe.fxml"));

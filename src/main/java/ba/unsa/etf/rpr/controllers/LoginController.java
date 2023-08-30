@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr.controllers;
 
 import ba.unsa.etf.rpr.business.KorisnikManager;
+import ba.unsa.etf.rpr.business.ModelManager;
 import ba.unsa.etf.rpr.dao.DaoFactory;
 import ba.unsa.etf.rpr.domain.Korisnik;
 import ba.unsa.etf.rpr.exceptions.PekaraException;
@@ -60,13 +61,14 @@ public class LoginController {
     public void otvaranjeHomePage(ActionEvent actionEvent) throws PekaraException {
         String email = emailFld.getText();
         String sifra = passwordFld.getText();
-
+        ModelManager model = ModelManager.getInstance();
         List<Korisnik> korisnici = korisnikManager.dajSveKorisnike();
 
         if(!(Objects.equals(email, "") || Objects.equals(sifra,""))) {
             for(Korisnik k : korisnici){
                 if(k.getEmail().equals(email) && k.getPassword().equals(sifra)){
                     try {
+                        model.setKorisnik(k);
                         Stage stage1 = (Stage) loginBtn.getScene().getWindow();
                         stage1.close();
                         Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/prodavnica.fxml"));

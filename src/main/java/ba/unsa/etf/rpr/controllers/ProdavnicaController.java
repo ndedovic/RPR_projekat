@@ -67,7 +67,7 @@ public class ProdavnicaController {
 
     public void dodajProizvodUKorpu(ActionEvent actionEvent) {
         Proizvodi p = tableViewID.getSelectionModel().getSelectedItem();
-        ModelManager model = new ModelManager();
+        ModelManager model = ModelManager.getInstance();
         if(p != null){
             selektovaniProizvod = p;
             tableViewID.getSelectionModel().clearSelection();
