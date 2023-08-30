@@ -234,5 +234,13 @@
             <Insets right="10.0" />
          </GridPane.margin>
       </PasswordField>
+      <Button mnemonicParsing="false" onAction="#zatvoriRegistraciju" style="-fx-background-color: rgb(255,255,255); -fx-border-color: rgb(218,165,32); -fx-border-width: 2;" text="ZATVORI" GridPane.columnIndex="1" GridPane.rowIndex="6">
+         <font>
+            <Font name="Times New Roman" size="16.0" />
+         </font>
+         <GridPane.margin>
+            <Insets bottom="10.0" left="100.0" />
+         </GridPane.margin>
+      </Button>
    </children>
 </GridPane>
