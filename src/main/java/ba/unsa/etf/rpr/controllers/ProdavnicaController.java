@@ -13,6 +13,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
@@ -53,6 +54,8 @@ public class ProdavnicaController {
             Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/korpa.fxml"));
             Stage stage = new Stage();
             stage.setTitle("Korpa");
+            Image icon = new Image(getClass().getResourceAsStream("/images/ikonica.jpg"));
+            stage.getIcons().add(icon);
             Scene scene = new Scene(newRoot, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE);
             stage.setScene(scene);
             stage.setResizable(false);
@@ -111,6 +114,8 @@ public class ProdavnicaController {
             Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/pocetna.fxml"));
             Stage stage = new Stage();
             stage.setTitle("Pocetna");
+            Image icon = new Image(getClass().getResourceAsStream("/images/ikonica.jpg"));
+            stage.getIcons().add(icon);
             Scene scene = new Scene(newRoot, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE);
             stage.setScene(scene);
             stage.setResizable(false);
