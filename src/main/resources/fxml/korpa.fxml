@@ -63,11 +63,17 @@
          <GridPane.margin>
             <Insets bottom="150.0" left="200.0" />
          </GridPane.margin>
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
       </Label>
       <Label fx:id="cijenaLbl" prefHeight="18.0" prefWidth="102.0" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets bottom="80.0" left="200.0" />
          </GridPane.margin>
+         <font>
+            <Font size="18.0" />
+         </font>
       </Label>
       <Button fx:id="potvrdiID" mnemonicParsing="false" onAction="#potvrdiNarudzbu" style="-fx-background-color: rgb(255,255,255); -fx-border-color: rgb(218,165,32); -fx-border-width: 2;" text="Potvrdi narudžbu" GridPane.rowIndex="1">
          <GridPane.margin>
