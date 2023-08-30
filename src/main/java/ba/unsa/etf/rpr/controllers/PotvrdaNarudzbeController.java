@@ -5,6 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
@@ -26,6 +27,8 @@ public class PotvrdaNarudzbeController {
             Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/prodavnica.fxml"));
             Stage stage = new Stage();
             stage.setTitle("Prodavnica");
+            Image icon = new Image(getClass().getResourceAsStream("/images/ikonica.jpg"));
+            stage.getIcons().add(icon);
             Scene scene = new Scene(newRoot, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE);
             stage.setScene(scene);
             stage.setResizable(false);
