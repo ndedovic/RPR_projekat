@@ -71,7 +71,7 @@ public class LoginController {
                         stage1.close();
                         Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/prodavnica.fxml"));
                         Stage stage = new Stage();
-                        stage.setTitle("Pocetna");
+                        stage.setTitle("Prodavnica");
                         Scene scene = new Scene(newRoot, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE);
                         stage.setScene(scene);
                         stage.setResizable(false);
