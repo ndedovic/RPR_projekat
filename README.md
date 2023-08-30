@@ -12,7 +12,28 @@ Na početnoj stranici imamo mogućnost da odaberemo login ili registraciju. Tako
 
 Ovdje vidimo više informacija o projektu. Dugme zatvori nas vraća na početnu stranicu.
 
-### Stranica O nama
+### Stranica Pomoc
 ![Alt Text](./src/main/resources/images/pomoc.PNG)
 
 Na ovoj stranici možemo saznati na koji način možemo dobiti pomoć pri korištenju stranice.Dugme zatvori nas vraća na početnu stranicu.
+
+### Login stranica
+![Alt Text](./src/main/resources/images/login.PNG)
+
+Izgled login stranice.
+
+### Stranica za registraciju
+![Alt Text](./src/main/resources/images/registracija.PNG)
+
+Izgled stranice za registraciju.
+
+### Prodavnica
+![Alt Text](./src/main/resources/images/prodavnica.PNG)
+
+Izgled prodavnice. Dugmad slatko i slano nam omogućavaju prikaz proizvoda za ove dvije kategorije. Dugme dodaj u korpu selektovani proizvod dodaje u korpi.
+Korpa nam omogućava prikaz prozora za korpu.
+
+### Prikaz proizvoda
+![Alt Text](./src/main/resources/images/prikazProizvoda.PNG)
+
+Ukoliko kliknemo na Slano dobijamo sljedeči prikaz proizvoda.
