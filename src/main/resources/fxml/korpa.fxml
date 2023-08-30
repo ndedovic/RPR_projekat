@@ -59,17 +59,17 @@
             <Insets bottom="80.0" left="20.0" />
          </GridPane.margin>
       </Label>
-      <Label prefHeight="18.0" prefWidth="106.0" GridPane.rowIndex="1">
+      <Label fx:id="nazivLbl" prefHeight="18.0" prefWidth="106.0" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets bottom="150.0" left="200.0" />
          </GridPane.margin>
       </Label>
-      <Label prefHeight="18.0" prefWidth="102.0" GridPane.rowIndex="1">
+      <Label fx:id="cijenaLbl" prefHeight="18.0" prefWidth="102.0" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets bottom="80.0" left="200.0" />
          </GridPane.margin>
       </Label>
-      <Button mnemonicParsing="false" style="-fx-background-color: rgb(255,255,255); -fx-border-color: rgb(218,165,32); -fx-border-width: 2;" text="Potvrdi narudžbu" GridPane.rowIndex="1">
+      <Button fx:id="potvrdiID" mnemonicParsing="false" onAction="#potvrdiNarudzbu" style="-fx-background-color: rgb(255,255,255); -fx-border-color: rgb(218,165,32); -fx-border-width: 2;" text="Potvrdi narudžbu" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets left="450.0" top="150.0" />
          </GridPane.margin>
@@ -77,7 +77,7 @@
             <Font name="Times New Roman" size="14.0" />
          </font>
       </Button>
-      <Button mnemonicParsing="false" style="-fx-background-color: rgb(255,255,255); -fx-border-color: rgb(218,165,32); -fx-border-width: 2;" text="Otkaži" GridPane.rowIndex="1">
+      <Button fx:id="otkaziID" mnemonicParsing="false" onAction="#otkaziNarudzbu" style="-fx-background-color: rgb(255,255,255); -fx-border-color: rgb(218,165,32); -fx-border-width: 2;" text="Otkaži" GridPane.rowIndex="1">
          <font>
             <Font name="Times New Roman" size="14.0" />
          </font>
