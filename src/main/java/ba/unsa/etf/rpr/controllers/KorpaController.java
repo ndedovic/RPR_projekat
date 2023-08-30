@@ -16,6 +16,9 @@ import javafx.stage.Stage;
 
 import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
 
+/**
+ * kontroler za korpu
+ */
 public class KorpaController {
     public Label nazivLbl;
     public Label cijenaLbl;
@@ -32,6 +35,11 @@ public class KorpaController {
             cijenaLbl.setText((ProdavnicaController.selektovaniProizvod.getCijena()));
         }
     }
+
+    /**
+     * Metoda kojom ćemo zapamtiti naručeni proizvod
+     * @throws PekaraException
+     */
     public void zabiljeziNarudzbu() throws PekaraException {
         ModelManager model = ModelManager.getInstance();
         Narudzba narudzba = new Narudzba();
@@ -40,6 +48,11 @@ public class KorpaController {
         System.out.println(narudzba.getKorisnik());
         manager.dodajNarudbu(narudzba);
     }
+
+    /**
+     * Metoda za potvrđivanje narudžbe
+     * @param actionEvent
+     */
     public void potvrdiNarudzbu(ActionEvent actionEvent) {
         try {
             zabiljeziNarudzbu();
@@ -57,6 +70,10 @@ public class KorpaController {
         }
     }
 
+    /**
+     * Metoda za otkazivanje narudžbe
+     * @param actionEvent
+     */
     public void otkaziNarudzbu(ActionEvent actionEvent) {
         try {
             Stage stage1 = (Stage) potvrdiID.getScene().getWindow();
