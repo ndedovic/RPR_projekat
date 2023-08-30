@@ -8,6 +8,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Region;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -72,6 +73,8 @@ public class PocetnaController {
             Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/login.fxml"));
             Stage stage = new Stage();
             stage.setTitle("Prijava");
+            Image icon = new Image(getClass().getResourceAsStream("/images/ikonica.jpg"));
+            stage.getIcons().add(icon);
             Scene scene = new Scene(newRoot, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE);
             stage.setScene(scene);
             stage.setResizable(false);
@@ -92,6 +95,8 @@ public class PocetnaController {
             Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/registracija.fxml"));
             Stage stage = new Stage();
             stage.setTitle("Registracija");
+            Image icon = new Image(getClass().getResourceAsStream("/images/ikonica.jpg"));
+            stage.getIcons().add(icon);
             Scene scene = new Scene(newRoot, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE);
             stage.setScene(scene);
             stage.setResizable(false);
