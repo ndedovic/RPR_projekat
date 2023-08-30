@@ -14,6 +14,11 @@ import static javafx.scene.layout.Region.USE_COMPUTED_SIZE;
  */
 
 public class AppFX extends Application {
+    private static Stage primaryStage;
+    public static Stage getPrimaryStage() {
+        return primaryStage;
+
+    }
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/fxml/pocetna.fxml"));

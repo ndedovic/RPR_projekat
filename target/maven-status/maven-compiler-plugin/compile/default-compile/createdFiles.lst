@@ -8,6 +8,7 @@ ba\unsa\etf\rpr\domain\Korisnik.class
 ba\unsa\etf\rpr\domain\Proizvodi.class
 ba\unsa\etf\rpr\dao\KorisnikDaoSQLImpl.class
 ba\unsa\etf\rpr\controllers\LoginController.class
+ba\unsa\etf\rpr\controllers\RegistracijaController$3.class
 ba\unsa\etf\rpr\controllers\RegistracijaController.class
 ba\unsa\etf\rpr\App.class
 ba\unsa\etf\rpr\dao\NarudzbaDao.class
@@ -16,6 +17,7 @@ ba\unsa\etf\rpr\domain\Kategorija.class
 ba\unsa\etf\rpr\dao\Dao.class
 ba\unsa\etf\rpr\controllers\PomocController.class
 ba\unsa\etf\rpr\domain\Idable.class
+ba\unsa\etf\rpr\controllers\RegistracijaController$2.class
 ba\unsa\etf\rpr\dao\DaoFactory.class
 ba\unsa\etf\rpr\dao\AbstractDao$1.class
 ba\unsa\etf\rpr\business\KategorijaManager.class
@@ -24,6 +26,8 @@ ba\unsa\etf\rpr\AppFX.class
 ba\unsa\etf\rpr\dao\KategorijaDaoSQLImpl.class
 ba\unsa\etf\rpr\dao\KategorijaDao.class
 ba\unsa\etf\rpr\controllers\OnamaController.class
+ba\unsa\etf\rpr\controllers\RegistracijaController$1.class
+ba\unsa\etf\rpr\controllers\RegistracijaController$4.class
 ba\unsa\etf\rpr\dao\KorisnikDao.class
 ba\unsa\etf\rpr\dao\AbstractDao.class
 ba\unsa\etf\rpr\business\NarudzbaManager.class
