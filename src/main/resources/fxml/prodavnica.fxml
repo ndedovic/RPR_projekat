@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1" fx:controller="ba.unsa.etf.rpr.controllers.ProdavnicaController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.controllers.ProdavnicaController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="528.7999633789062" minWidth="10.0" prefWidth="99.2" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="541.6000122070312" minWidth="10.0" prefWidth="501.6000000000001" />
@@ -95,10 +90,10 @@
             </Button>
          </children>
       </GridPane>
-      <TableView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+      <TableView fx:id="tableViewID" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
         <columns>
-          <TableColumn prefWidth="247.20001828670502" text="Naziv" />
-          <TableColumn minWidth="0.0" prefWidth="253.5999755859375" text="Cijena" />
+          <TableColumn fx:id="tableViewNaziv" prefWidth="247.20001828670502" text="Naziv" />
+          <TableColumn fx:id="tableViewCijena" minWidth="0.0" prefWidth="253.5999755859375" text="Cijena" />
         </columns>
       </TableView>
    </children>

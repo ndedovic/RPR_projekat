@@ -139,7 +139,7 @@ public class RegistracijaController {
                 try {
                     Stage stage1 = (Stage) registracijaBtn.getScene().getWindow();
                     stage1.close();
-                    Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/pocetna.fxml"));
+                    Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/prodavnica.fxml"));
                     Stage stage = new Stage();
                     stage.setTitle("Pocetna");
                     Scene scene = new Scene(newRoot, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE);
