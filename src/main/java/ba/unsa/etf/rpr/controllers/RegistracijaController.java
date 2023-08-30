@@ -2,6 +2,7 @@ package ba.unsa.etf.rpr.controllers;
 
 import ba.unsa.etf.rpr.AppFX;
 import ba.unsa.etf.rpr.business.KorisnikManager;
+import ba.unsa.etf.rpr.business.ModelManager;
 import ba.unsa.etf.rpr.business.NarudzbaManager;
 import ba.unsa.etf.rpr.domain.Korisnik;
 import ba.unsa.etf.rpr.exceptions.PekaraException;
@@ -102,7 +103,7 @@ public class RegistracijaController {
 
 
     public void akcijaRegistrovanja(ActionEvent actionEvent) throws PekaraException {
-
+        ModelManager model = ModelManager.getInstance();
         String ime = imeFld.getText();
         String prezime = prezimeFld.getText();
         String sifra = passwordFld.getText();
@@ -122,7 +123,7 @@ public class RegistracijaController {
             korisnik.setPrezime(prezime);
             korisnik.setPassword(sifra);
             korisnik.setEmail(email);
-
+            model.setKorisnik(korisnik);
 
             try {
                 FileReader r = new FileReader("src/main/resources/application.properties");
