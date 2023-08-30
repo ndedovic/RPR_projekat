@@ -58,6 +58,11 @@ public class LoginController {
 
     }
 
+    /**
+     * Metoda koja se izvršava kada se pritisne dugme login
+     * @param actionEvent
+     * @throws PekaraException
+     */
     public void otvaranjeHomePage(ActionEvent actionEvent) throws PekaraException {
         String email = emailFld.getText();
         String sifra = passwordFld.getText();
@@ -87,6 +92,10 @@ public class LoginController {
 
     }
 
+    /**
+     * Metoda koja se izvršava kada se pritisne dugme zatvori
+     * @param actionEvent
+     */
     public void zatvoriLogin(ActionEvent actionEvent) {
         try {
             Stage stage1 = (Stage) loginBtn.getScene().getWindow();
