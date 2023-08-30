@@ -72,4 +72,10 @@ public class AppTest
             assertEquals("Prezime mora sadržavati samo slova, i dužina prezimena ne smije biti manja ili jednaka 2", e.getMessage());
         }
     }
+    @Test
+    public void Test8() throws PekaraException {
+        KategorijaManager manager = new KategorijaManager();
+        manager.dodajKategoriju(kategorija1);
+        assertEquals(1, manager.dajSveKategorije().size());
+    }
 }
