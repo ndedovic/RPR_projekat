@@ -16,12 +16,19 @@ import java.io.IOException;
 
 import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
 
+/**
+ * kontroler za pocetnu
+ */
 public class PocetnaController {
     public Button aboutBtn;
     public Button helpBtn;
     public Button loginBtn;
     public Button registrationBtn;
 
+    /**
+     * Metoda za prikaz stranice o nama
+     * @param actionEvent
+     */
     public void prikazOnama(ActionEvent actionEvent) {
         try {
             Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/onama.fxml"));
@@ -36,6 +43,10 @@ public class PocetnaController {
         }
     }
 
+    /**
+     * metoda za prikaz stranice za pomoc
+     * @param actionEvent
+     */
     public void prikazPomoci(ActionEvent actionEvent) {
         try {
             Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/pomoc.fxml"));
@@ -50,6 +61,10 @@ public class PocetnaController {
         }
     }
 
+    /**
+     * Metoda za otvaranje login stranice
+     * @param actionEvent
+     */
     public void prikazLogina(ActionEvent actionEvent) {
         try {
             Stage stage1 = (Stage)loginBtn.getScene().getWindow();
@@ -66,6 +81,10 @@ public class PocetnaController {
         }
     }
 
+    /**
+     * Metoda za otvaranje stranice za registraciju
+     * @param actionEvent
+     */
     public void prikazRegistracije(ActionEvent actionEvent) {
         try {
             Stage stage1 = (Stage)registrationBtn.getScene().getWindow();
