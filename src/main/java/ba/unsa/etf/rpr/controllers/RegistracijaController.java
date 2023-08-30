@@ -31,6 +31,9 @@ import java.util.Properties;
 
 import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
 
+/**
+ * Kontroler za registraciju
+ */
 public class RegistracijaController {
     @FXML public TextField imeFld;
     @FXML public TextField prezimeFld;
@@ -101,7 +104,11 @@ public class RegistracijaController {
 
     }
 
-
+    /**
+     * Metoda koja se izvršava kada se pritisne dugme za registraciju
+     * @param actionEvent
+     * @throws PekaraException
+     */
     public void akcijaRegistrovanja(ActionEvent actionEvent) throws PekaraException {
         ModelManager model = ModelManager.getInstance();
         String ime = imeFld.getText();
@@ -158,6 +165,10 @@ public class RegistracijaController {
         }
     }
 
+    /**
+     * Metoda koja se izvršava kada se pritisne dugme zatvori
+     * @param actionEvent
+     */
     public void zatvoriRegistraciju(ActionEvent actionEvent) {
         try {
             Stage stage1 = (Stage) registracijaBtn.getScene().getWindow();
