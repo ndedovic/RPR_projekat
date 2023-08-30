@@ -2,16 +2,26 @@ package ba.unsa.etf.rpr;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.when;
 
 import ba.unsa.etf.rpr.business.KategorijaManager;
 import ba.unsa.etf.rpr.business.KorisnikManager;
 import ba.unsa.etf.rpr.business.ProizvodiManager;
+import ba.unsa.etf.rpr.dao.DaoFactory;
+import ba.unsa.etf.rpr.dao.KorisnikDao;
+import ba.unsa.etf.rpr.dao.KorisnikDaoSQLImpl;
+import ba.unsa.etf.rpr.dao.ProizvodiDaoSQLImpl;
 import ba.unsa.etf.rpr.domain.Kategorija;
 import ba.unsa.etf.rpr.domain.Korisnik;
 import ba.unsa.etf.rpr.domain.Narudzba;
 import ba.unsa.etf.rpr.domain.Proizvodi;
 import ba.unsa.etf.rpr.exceptions.PekaraException;
 import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.mockito.Mock;
+import org.mockito.MockedStatic;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -84,5 +94,36 @@ public class AppTest
         ProizvodiManager manager = new ProizvodiManager();
         manager.obrisiProizvod(1);
         assertNotNull(manager.pronadjiSveProizvode().size());
+    }
+
+    @Mock
+    public Proizvodi proizvod = new Proizvodi();
+    private ProizvodiDaoSQLImpl sqlProizvod = Mockito.mock(ProizvodiDaoSQLImpl.class);
+    private KorisnikManager korisnikManager = new KorisnikManager();
+    private KategorijaManager kategorijaManager = new KategorijaManager();
+    private ProizvodiManager proizvodManager = new ProizvodiManager();
+
+    @BeforeEach
+    public void setUp() {
+        proizvod.setId(15);
+        proizvod.setCijena("5");
+        proizvod.setNaziv("pita");
+        proizvod.setKategorija(1);
+        MockitoAnnotations.openMocks(this);
+        proizvodManager= new ProizvodiManager();
+        kategorijaManager = Mockito.mock(KategorijaManager.class);
+        korisnikManager = Mockito.mock(KorisnikManager.class);
+    }
+
+    @Test
+    public void Test10() throws PekaraException {
+        Proizvodi proizvod = new Proizvodi(18, "supa", "10", 2);
+        MockedStatic<DaoFactory> mockedFactory = Mockito.mockStatic(DaoFactory.class);
+        mockedFactory.when(DaoFactory::proizvodiDao).thenReturn(sqlProizvod);
+        Proizvodi proizvod1 = new Proizvodi();
+        when(sqlProizvod.add(Mockito.any(Proizvodi.class))).thenReturn(proizvod1);
+        Proizvodi proizvod2 = sqlProizvod.add(new Proizvodi());
+        assertEquals(proizvod1, proizvod2);
+        mockedFactory.close();
     }
 }
