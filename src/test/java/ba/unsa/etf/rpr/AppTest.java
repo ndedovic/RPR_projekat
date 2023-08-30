@@ -54,4 +54,13 @@ public class AppTest
         Narudzba n1 = new Narudzba(1, 11, "2");
         assertEquals(n1.getCijena(), p.getCijena());
     }
+    @Test
+    public void Test6(){
+        KorisnikManager manager = new KorisnikManager();
+        try{
+            manager.validacijaImenaKorisnika("n");
+        } catch (PekaraException e) {
+            assertEquals("Ime mora sadržavati samo slova, i dužina imena ne smije biti manja ili jednaka 2", e.getMessage());
+        }
+    }
 }
