@@ -21,4 +21,8 @@ public class AppTest
         assertEquals("nejra.dedovic@gmail.com", k1.getEmail());
         assertEquals("12345678", k1.getPassword());
     }
+    @Test
+    public void Test2(){
+        assertEquals(8, k1.getPassword().length());
+    }
 }
