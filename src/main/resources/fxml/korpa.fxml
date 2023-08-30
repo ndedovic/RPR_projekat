@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="342.0" prefWidth="601.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/20.0.1">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="342.0" prefWidth="601.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.controllers.KorpaController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
   </columnConstraints>
@@ -59,17 +56,17 @@
             <Insets bottom="80.0" left="20.0" />
          </GridPane.margin>
       </Label>
-      <Label prefHeight="18.0" prefWidth="106.0" GridPane.rowIndex="1">
+      <Label fx:id="nazivLbl" prefHeight="18.0" prefWidth="106.0" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets bottom="150.0" left="200.0" />
          </GridPane.margin>
       </Label>
-      <Label prefHeight="18.0" prefWidth="102.0" GridPane.rowIndex="1">
+      <Label fx:id="cijenaLbl" prefHeight="18.0" prefWidth="102.0" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets bottom="80.0" left="200.0" />
          </GridPane.margin>
       </Label>
-      <Button mnemonicParsing="false" style="-fx-background-color: rgb(255,255,255); -fx-border-color: rgb(218,165,32); -fx-border-width: 2;" text="Potvrdi narudžbu" GridPane.rowIndex="1">
+      <Button fx:id="potvrdiID" mnemonicParsing="false" onAction="#potvrdiNarudzbu" style="-fx-background-color: rgb(255,255,255); -fx-border-color: rgb(218,165,32); -fx-border-width: 2;" text="Potvrdi narudžbu" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets left="450.0" top="150.0" />
          </GridPane.margin>
@@ -77,7 +74,7 @@
             <Font name="Times New Roman" size="14.0" />
          </font>
       </Button>
-      <Button mnemonicParsing="false" style="-fx-background-color: rgb(255,255,255); -fx-border-color: rgb(218,165,32); -fx-border-width: 2;" text="Otkaži" GridPane.rowIndex="1">
+      <Button fx:id="otkaziID" mnemonicParsing="false" onAction="#otkaziNarudzbu" style="-fx-background-color: rgb(255,255,255); -fx-border-color: rgb(218,165,32); -fx-border-width: 2;" text="Otkaži" GridPane.rowIndex="1">
          <font>
             <Font name="Times New Roman" size="14.0" />
          </font>

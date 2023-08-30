@@ -8,12 +8,18 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.util.Date;
 import java.util.List;
+
+import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
 
 public class ProdavnicaController {
     public Button btnKorpa;
@@ -33,6 +39,19 @@ public class ProdavnicaController {
 
     }
     public void prikaziKorpu(ActionEvent actionEvent) {
+        try {
+            Stage stage1 = (Stage) btnKorpa.getScene().getWindow();
+            stage1.close();
+            Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/korpa.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Korpa");
+            Scene scene = new Scene(newRoot, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE);
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+        } catch (Exception e1) {
+            System.out.println(e1.getMessage());
+        }
     }
 
     public void prikaziSlatkeProizvode(ActionEvent actionEvent) throws PekaraException {
