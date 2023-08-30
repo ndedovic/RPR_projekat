@@ -21,6 +21,9 @@ import java.util.List;
 
 import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
 
+/**
+ * Kontroler za prodavnicu
+ */
 public class ProdavnicaController {
     public Button btnKorpa;
     public Button btnSlatko;
@@ -38,6 +41,11 @@ public class ProdavnicaController {
         tableViewCijena.setCellValueFactory(new PropertyValueFactory<Proizvodi, String>("cijena"));
 
     }
+
+    /**
+     * Motoda za prikaz sadžaja korpe, izcršava se kada se pritisne dugme Korpa
+     * @param actionEvent
+     */
     public void prikaziKorpu(ActionEvent actionEvent) {
         try {
             Stage stage1 = (Stage) btnKorpa.getScene().getWindow();
@@ -54,17 +62,31 @@ public class ProdavnicaController {
         }
     }
 
+    /**
+     * Metoda za prikaz proizvoda koji pripadaju kategoriji 1
+     * @param actionEvent
+     * @throws PekaraException
+     */
     public void prikaziSlatkeProizvode(ActionEvent actionEvent) throws PekaraException {
 
         tableViewID.setItems(FXCollections.observableList(manager.pronadjiProizvodPoKategoriji(1)));
         tableViewID.refresh();
     }
 
+    /**
+     * Metoda za prikaz proizvoda koji pripadaju kategoriji 2
+     * @param actionEvent
+     * @throws PekaraException
+     */
     public void prikaziSlaneProizvode(ActionEvent actionEvent) throws PekaraException {
         tableViewID.setItems(FXCollections.observableList(manager.pronadjiProizvodPoKategoriji(2)));
         tableViewID.refresh();
     }
 
+    /**
+     * Metoda za dodavanje proizvoda u korpu
+     * @param actionEvent
+     */
     public void dodajProizvodUKorpu(ActionEvent actionEvent) {
         Proizvodi p = tableViewID.getSelectionModel().getSelectedItem();
         ModelManager model = ModelManager.getInstance();
@@ -78,6 +100,10 @@ public class ProdavnicaController {
         }
     }
 
+    /**
+     * Metoda za zatvaranje prodavnice, izvrsava se kada se pritisne dugme Zatvori
+     * @param actionEvent
+     */
     public void zatvoriProdavnicu(ActionEvent actionEvent) {
         try {
             Stage stage1 = (Stage) btnKorpa.getScene().getWindow();
