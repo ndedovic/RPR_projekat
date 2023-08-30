@@ -7,6 +7,7 @@ import ba.unsa.etf.rpr.business.KategorijaManager;
 import ba.unsa.etf.rpr.business.KorisnikManager;
 import ba.unsa.etf.rpr.domain.Kategorija;
 import ba.unsa.etf.rpr.domain.Korisnik;
+import ba.unsa.etf.rpr.domain.Narudzba;
 import ba.unsa.etf.rpr.domain.Proizvodi;
 import ba.unsa.etf.rpr.exceptions.PekaraException;
 import org.junit.Test;
@@ -47,5 +48,10 @@ public class AppTest
     public void Test4() throws PekaraException {
         KorisnikManager manager = new KorisnikManager();
         assertTrue(manager.dajSveKorisnike().contains(k2));
+    }
+    @Test
+    public void Test5(){
+        Narudzba n1 = new Narudzba(1, 11, "2");
+        assertEquals(n1.getCijena(), p.getCijena());
     }
 }
