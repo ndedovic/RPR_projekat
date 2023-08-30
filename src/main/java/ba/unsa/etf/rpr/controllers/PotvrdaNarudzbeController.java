@@ -9,9 +9,16 @@ import javafx.stage.Stage;
 
 import static javafx.scene.control.PopupControl.USE_COMPUTED_SIZE;
 
+/**
+ * kontroler za potvrdu narudzbe
+ */
 public class PotvrdaNarudzbeController {
     public Button zatvoriBtn;
 
+    /**
+     * metoda za zatvaranje prozora
+     * @param actionEvent
+     */
     public void zatvoriProzor(ActionEvent actionEvent) {
         try {
             Stage stage1 = (Stage) zatvoriBtn.getScene().getWindow();
