@@ -28,5 +28,15 @@ public class KorisnikManager {
     public static List<Korisnik> pronadjiKorisnikaPoEmailu(String email) throws PekaraException {
         return DaoFactory.korisnikDao().pronadjiKorisnikaPoEmailu(email);
     }
+    public void validacijaImenaKorisnika(String ime) throws PekaraException {
+        if (ime == null || ime.length() <= 2 || !ime.matches("^[a-zA-Z]+$"))
+            throw new PekaraException("Ime mora sadržavati samo slova, i dužina imena ne smije biti manja ili jednaka 2");
+
+    }
+    public void validacijaPrezimenaKupca(String prezime) throws PekaraException {
+        if (prezime == null || prezime.length() <= 2 || !prezime.matches("^[a-zA-Z]+$")) {
+            throw new PekaraException("Prezime mora sadržavati samo slova, i dužina prezimena ne smije biti manja ili jednaka 2");
+        }
+    }
 
 }
