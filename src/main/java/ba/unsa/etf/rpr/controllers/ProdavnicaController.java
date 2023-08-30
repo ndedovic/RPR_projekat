@@ -77,4 +77,20 @@ public class ProdavnicaController {
             label.setText("Nijedan proizvod nije selektovan");
         }
     }
+
+    public void zatvoriProdavnicu(ActionEvent actionEvent) {
+        try {
+            Stage stage1 = (Stage) btnKorpa.getScene().getWindow();
+            stage1.close();
+            Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/pocetna.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Pocetna");
+            Scene scene = new Scene(newRoot, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE);
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+        } catch (Exception e1) {
+            System.out.println(e1.getMessage());
+        }
+    }
 }

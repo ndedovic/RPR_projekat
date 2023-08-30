@@ -59,6 +59,14 @@
                   <Insets left="400.0" />
                </GridPane.margin>
             </Button>
+            <Button mnemonicParsing="false" onAction="#zatvoriProdavnicu" style="-fx-background-color: rgb(218,165,32); -fx-border-color: rgb(255,255,255); -fx-border-width: 2;" text="Zatvori">
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="300.0" />
+               </GridPane.margin>
+            </Button>
          </children>
       </GridPane>
       <GridPane style="-fx-background-color: rgb(218,165,32);" GridPane.rowIndex="1">
