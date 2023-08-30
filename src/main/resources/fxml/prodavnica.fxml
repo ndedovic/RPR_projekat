@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.controllers.ProdavnicaController">
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ba.unsa.etf.rpr.controllers.ProdavnicaController">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="528.7999633789062" minWidth="10.0" prefWidth="99.2" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="541.6000122070312" minWidth="10.0" prefWidth="501.6000000000001" />
@@ -80,7 +85,7 @@
                   <Font name="Times New Roman" size="18.0" />
                </font>
             </Button>
-            <Button fx:id="btnDodajUKorpu" mnemonicParsing="false" onAction="#dodajUProizvodUKorpu" prefHeight="52.0" prefWidth="79.0" style="-fx-background-color: rgb(218,165,32); -fx-border-color: rgb(255,255,255); -fx-border-width: 2;" text="Dodaj u korpu" textAlignment="CENTER" wrapText="true">
+            <Button fx:id="btnDodajUKorpu" mnemonicParsing="false" onAction="#dodajProizvodUKorpu" prefHeight="52.0" prefWidth="79.0" style="-fx-background-color: rgb(218,165,32); -fx-border-color: rgb(255,255,255); -fx-border-width: 2;" text="Dodaj u korpu" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font name="Times New Roman" size="15.0" />
                </font>
@@ -88,6 +93,14 @@
                   <Insets left="10.0" top="250.0" />
                </GridPane.margin>
             </Button>
+            <Label fx:id="label" prefHeight="76.0" prefWidth="74.0" textAlignment="JUSTIFY" wrapText="true">
+               <GridPane.margin>
+                  <Insets left="10.0" top="50.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="Times New Roman" size="13.0" />
+               </font>
+            </Label>
          </children>
       </GridPane>
       <TableView fx:id="tableViewID" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">

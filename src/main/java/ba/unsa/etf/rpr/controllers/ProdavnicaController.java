@@ -1,5 +1,6 @@
 package ba.unsa.etf.rpr.controllers;
 
+import ba.unsa.etf.rpr.business.ModelManager;
 import ba.unsa.etf.rpr.business.ProizvodiManager;
 import ba.unsa.etf.rpr.domain.Proizvodi;
 import ba.unsa.etf.rpr.exceptions.PekaraException;
@@ -22,7 +23,8 @@ public class ProdavnicaController {
     public TableView<Proizvodi> tableViewID;
     public TableColumn<Proizvodi, String> tableViewNaziv;
     public TableColumn<Proizvodi, String> tableViewCijena;
-
+    public static Proizvodi selektovaniProizvod = new Proizvodi();
+    public Label label;
     ProizvodiManager manager = new ProizvodiManager();
     @FXML
     void initialize() throws PekaraException {
@@ -44,6 +46,16 @@ public class ProdavnicaController {
         tableViewID.refresh();
     }
 
-    public void dodajUProizvodUKorpu(ActionEvent actionEvent) {
+    public void dodajProizvodUKorpu(ActionEvent actionEvent) {
+        Proizvodi p = tableViewID.getSelectionModel().getSelectedItem();
+        ModelManager model = new ModelManager();
+        if(p != null){
+            selektovaniProizvod = p;
+            tableViewID.getSelectionModel().clearSelection();
+            model.setProizvod(selektovaniProizvod);
+            label.setText("");
+        }else{
+            label.setText("Nijedan proizvod nije selektovan");
+        }
     }
 }
