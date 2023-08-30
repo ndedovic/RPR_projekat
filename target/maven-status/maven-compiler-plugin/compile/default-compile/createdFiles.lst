@@ -12,6 +12,7 @@ ba\unsa\etf\rpr\controllers\LoginController.class
 ba\unsa\etf\rpr\controllers\RegistracijaController$3.class
 ba\unsa\etf\rpr\controllers\RegistracijaController.class
 ba\unsa\etf\rpr\App.class
+ba\unsa\etf\rpr\business\ModelManager.class
 ba\unsa\etf\rpr\controllers\ProdavnicaController.class
 ba\unsa\etf\rpr\dao\NarudzbaDao.class
 ba\unsa\etf\rpr\dao\NarudzbaDaoSQLImpl.class
