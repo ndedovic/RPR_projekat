@@ -62,7 +62,7 @@ public class AppTest
     }
     @Test
     public void Test5(){
-        Narudzba n1 = new Narudzba(1, 11, "2");
+        Narudzba n1 = new Narudzba(1, 11, "2", "a");
         assertEquals(n1.getCijena(), p.getCijena());
     }
     @Test

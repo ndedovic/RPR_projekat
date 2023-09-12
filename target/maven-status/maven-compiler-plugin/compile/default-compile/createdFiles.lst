@@ -11,6 +11,7 @@ ba\unsa\etf\rpr\controllers\ProdavnicaController.class
 ba\unsa\etf\rpr\dao\NarudzbaDao.class
 ba\unsa\etf\rpr\dao\NarudzbaDaoSQLImpl.class
 ba\unsa\etf\rpr\domain\Kategorija.class
+ba\unsa\etf\rpr\controllers\MojeNarudzbeController.class
 ba\unsa\etf\rpr\controllers\PomocController.class
 ba\unsa\etf\rpr\controllers\RegistracijaController$2.class
 ba\unsa\etf\rpr\dao\DaoFactory.class

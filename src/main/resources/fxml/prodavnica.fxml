@@ -67,6 +67,14 @@
                   <Insets left="300.0" />
                </GridPane.margin>
             </Button>
+            <Button fx:id="narudzbeID" mnemonicParsing="false" onAction="#vratiSeNaNarudzbe" text="Narudzbe">
+               <font>
+                  <Font name="Times New Roman" size="18.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets bottom="5.0" left="180.0" />
+               </GridPane.margin>
+            </Button>
          </children>
       </GridPane>
       <GridPane style="-fx-background-color: rgb(218,165,32);" GridPane.rowIndex="1">

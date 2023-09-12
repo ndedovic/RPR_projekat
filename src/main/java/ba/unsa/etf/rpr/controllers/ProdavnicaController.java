@@ -35,12 +35,14 @@ public class ProdavnicaController {
     public TableColumn<Proizvodi, String> tableViewCijena;
     public static Proizvodi selektovaniProizvod = new Proizvodi();
     public Label label;
+    public Button narudzbeID;
     ProizvodiManager manager = new ProizvodiManager();
     @FXML
     void initialize() throws PekaraException {
         tableViewNaziv.setCellValueFactory(new PropertyValueFactory<Proizvodi, String>("naziv"));
         tableViewCijena.setCellValueFactory(new PropertyValueFactory<Proizvodi, String>("cijena"));
-
+        tableViewID.setItems(FXCollections.observableList(manager.pronadjiSveProizvode()));
+        tableViewID.refresh();
     }
 
     /**
@@ -114,6 +116,24 @@ public class ProdavnicaController {
             Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/pocetna.fxml"));
             Stage stage = new Stage();
             stage.setTitle("Pocetna");
+            Image icon = new Image(getClass().getResourceAsStream("/images/ikonica.jpg"));
+            stage.getIcons().add(icon);
+            Scene scene = new Scene(newRoot, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE);
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.show();
+        } catch (Exception e1) {
+            System.out.println(e1.getMessage());
+        }
+    }
+
+    public void vratiSeNaNarudzbe(ActionEvent actionEvent) {
+        try {
+            Stage stage1 = (Stage) narudzbeID.getScene().getWindow();
+            stage1.close();
+            Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/mojeNarudzbe.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Moje narudzbe");
             Image icon = new Image(getClass().getResourceAsStream("/images/ikonica.jpg"));
             stage.getIcons().add(icon);
             Scene scene = new Scene(newRoot, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE);

@@ -77,9 +77,9 @@ public class LoginController {
                         model.setKorisnik(k);
                         Stage stage1 = (Stage) loginBtn.getScene().getWindow();
                         stage1.close();
-                        Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/prodavnica.fxml"));
+                        Parent newRoot = FXMLLoader.load(getClass().getResource("/fxml/mojeNarudzbe.fxml"));
                         Stage stage = new Stage();
-                        stage.setTitle("Prodavnica");
+                        stage.setTitle("Moje narudzbe");
                         Image icon = new Image(getClass().getResourceAsStream("/images/ikonica.jpg"));
                         stage.getIcons().add(icon);
                         Scene scene = new Scene(newRoot, USE_COMPUTED_SIZE, USE_COMPUTED_SIZE);

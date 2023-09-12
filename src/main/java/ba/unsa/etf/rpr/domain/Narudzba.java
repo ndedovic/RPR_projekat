@@ -10,6 +10,7 @@ public class Narudzba implements Idable{
     private int id;
     private int idKorisnik;
     private String cijena;
+    private String naziv;
 
     /**
      * Konstruktor sa svim parametrima
@@ -17,10 +18,11 @@ public class Narudzba implements Idable{
      * @param idKorisnik
      * @param cijena
      */
-    public Narudzba(int id, int idKorisnik, String cijena) {
+    public Narudzba(int id, int idKorisnik, String cijena, String naziv) {
         this.id = id;
         this.idKorisnik = idKorisnik;
         this.cijena = cijena;
+        this.naziv = naziv;
     }
 
     /**
@@ -64,6 +66,14 @@ public class Narudzba implements Idable{
 
     public void setCijena(String cijena) {
         this.cijena = cijena;
+    }
+
+    public String getNaziv() {
+        return naziv;
+    }
+
+    public void setNaziv(String naziv) {
+        this.naziv = naziv;
     }
 
     /**

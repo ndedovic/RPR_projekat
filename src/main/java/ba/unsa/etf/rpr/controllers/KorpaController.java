@@ -46,7 +46,8 @@ public class KorpaController {
         Narudzba narudzba = new Narudzba();
         narudzba.setKorisnik(model.getKorisnik().getId());
         narudzba.setCijena(model.getProizvod().getCijena());
-        System.out.println(narudzba.getKorisnik());
+        narudzba.setNaziv(model.getProizvod().getNaziv());
+        System.out.println(narudzba.getNaziv());
         manager.dodajNarudbu(narudzba);
     }
 

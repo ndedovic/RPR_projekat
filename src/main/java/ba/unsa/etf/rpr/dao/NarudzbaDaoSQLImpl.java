@@ -30,6 +30,7 @@ public class NarudzbaDaoSQLImpl extends AbstractDao<Narudzba> implements Narudzb
             narudzba.setId(rs.getInt("idNarudzba"));
             narudzba.setCijena(rs.getString("cijena"));
             narudzba.setKorisnik(rs.getInt("idKorisnik"));
+            narudzba.setNaziv(rs.getString("naziv"));
             return narudzba;
         } catch (SQLException e) {
             throw new PekaraException(e.getMessage(), e);
@@ -42,6 +43,7 @@ public class NarudzbaDaoSQLImpl extends AbstractDao<Narudzba> implements Narudzb
         row.put("idNarudzba", object.getId());
         row.put("cijena", object.getCijena());
         row.put("idKorisnik", object.getKorisnik());
+        row.put("naziv", object.getNaziv());
         return row;
     }
 

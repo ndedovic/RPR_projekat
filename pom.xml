@@ -95,6 +95,7 @@
     </dependency>
 
   </dependencies>
+
     <build>
         <plugins>
             <plugin>
@@ -173,6 +174,27 @@
               <artifactId>maven-project-info-reports-plugin</artifactId>
               <version>3.0.0</version>
             </plugin>
+            <plugin>
+              <artifactId>maven-assembly-plugin</artifactId>
+              <executions>
+                <execution>
+                  <phase>package</phase>
+                  <goals>
+                    <goal>single</goal>
+                  </goals>
+                </execution>
+              </executions>
+              <configuration>
+                <descriptorRefs>
+                  <descriptorRef>jar-with-dependencies</descriptorRef>
+                </descriptorRefs>
+                <archive>
+                  <manifest>
+                    <mainClass>ba.unsa.etf.rpr.predavanje23.Main</mainClass>
+                  </manifest>
+                </archive>
+              </configuration>
+            </plugin>
           </plugins>
         </pluginManagement>
       </build>
@@ -194,7 +216,7 @@
                 <archive>
                   <manifest>
                     <addClasspath>true</addClasspath>
-                    <mainClass>ba.unsa.etf.rpr.App</mainClass>
+                    <mainClass>ba.unsa.etf.rpr.AppFX</mainClass>
                   </manifest>
                 </archive>
               </configuration>
@@ -213,6 +235,28 @@
               <artifactId>maven-surefire-plugin</artifactId>
               <version>3.0.0-M5</version>
             </plugin>
+            <plugin>
+              <artifactId>maven-assembly-plugin</artifactId>
+              <executions>
+                <execution>
+                  <phase>package</phase>
+                  <goals>
+                    <goal>single</goal>
+                  </goals>
+                </execution>
+              </executions>
+              <configuration>
+                <descriptorRefs>
+                  <descriptorRef>jar-with-dependencies</descriptorRef>
+                </descriptorRefs>
+                <archive>
+                  <manifest>
+                    <mainClass>ba.unsa.etf.rpr.AppFX</mainClass>
+                  </manifest>
+                </archive>
+              </configuration>
+            </plugin>
+
 
           </plugins>
         </pluginManagement>
